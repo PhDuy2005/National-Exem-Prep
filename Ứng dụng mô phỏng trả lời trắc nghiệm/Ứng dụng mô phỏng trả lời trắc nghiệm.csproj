@@ -81,6 +81,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cMultipleChoieQuestion.cs" />
+    <Compile Include="cMultiplyTrueFalseQuestion.cs" />
+    <Compile Include="cQuestion.cs" />
+    <Compile Include="cShortAnswerQuestion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
