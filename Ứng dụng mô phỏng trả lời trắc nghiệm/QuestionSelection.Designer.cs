@@ -28,31 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridView dgv_questionSelection;
             this.lb_TimeLeft = new System.Windows.Forms.Label();
             this.lb_clock = new System.Windows.Forms.Label();
             this.btn_submit = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            dgv_questionSelection = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(dgv_questionSelection)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_TimeLeft
             // 
+            this.lb_TimeLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_TimeLeft.AutoSize = true;
             this.lb_TimeLeft.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lb_TimeLeft.ForeColor = System.Drawing.Color.Red;
-            this.lb_TimeLeft.Location = new System.Drawing.Point(12, 9);
+            this.lb_TimeLeft.Location = new System.Drawing.Point(9, 6);
             this.lb_TimeLeft.Name = "lb_TimeLeft";
-            this.lb_TimeLeft.Size = new System.Drawing.Size(208, 35);
+            this.lb_TimeLeft.Size = new System.Drawing.Size(215, 35);
             this.lb_TimeLeft.TabIndex = 0;
-            this.lb_TimeLeft.Text = "Thời gian còn lại";
+            this.lb_TimeLeft.Text = "Thời gian còn lại:";
             this.lb_TimeLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_clock
             // 
+            this.lb_clock.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_clock.AutoSize = true;
             this.lb_clock.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lb_clock.ForeColor = System.Drawing.Color.Red;
-            this.lb_clock.Location = new System.Drawing.Point(226, 9);
+            this.lb_clock.Location = new System.Drawing.Point(250, 6);
             this.lb_clock.Name = "lb_clock";
             this.lb_clock.Size = new System.Drawing.Size(78, 35);
             this.lb_clock.TabIndex = 1;
@@ -70,30 +75,47 @@
             this.btn_submit.Text = "Nộp bài";
             this.btn_submit.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgv_questionSelection
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(770, 352);
-            this.dataGridView1.TabIndex = 8;
+            dgv_questionSelection.AllowUserToAddRows = false;
+            dgv_questionSelection.AllowUserToDeleteRows = false;
+            dgv_questionSelection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_questionSelection.Location = new System.Drawing.Point(18, 86);
+            dgv_questionSelection.Name = "dgv_questionSelection";
+            dgv_questionSelection.RowHeadersWidth = 51;
+            dgv_questionSelection.RowTemplate.Height = 24;
+            dgv_questionSelection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgv_questionSelection.Size = new System.Drawing.Size(770, 352);
+            dgv_questionSelection.TabIndex = 8;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.34104F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.65896F));
+            this.tableLayoutPanel1.Controls.Add(this.lb_TimeLeft, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lb_clock, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 14);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(346, 47);
+            this.tableLayoutPanel1.TabIndex = 9;
             // 
             // QuestionSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(dgv_questionSelection);
             this.Controls.Add(this.btn_submit);
-            this.Controls.Add(this.lb_clock);
-            this.Controls.Add(this.lb_TimeLeft);
             this.Name = "QuestionSelection";
             this.Text = "QuestionSelection";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dgv_questionSelection)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -102,6 +124,6 @@
         private System.Windows.Forms.Label lb_TimeLeft;
         private System.Windows.Forms.Label lb_clock;
         private System.Windows.Forms.Button btn_submit;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

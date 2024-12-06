@@ -16,7 +16,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SubjectInformation());
+            Application.Run(new QuestionSelection());
         }
     }
 }
