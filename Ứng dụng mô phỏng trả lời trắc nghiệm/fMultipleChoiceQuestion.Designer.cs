@@ -35,10 +35,10 @@
             this.lb_questionContent = new System.Windows.Forms.Label();
             this.rbtn_option1 = new System.Windows.Forms.RadioButton();
             this.pn_questionStructure = new System.Windows.Forms.Panel();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.btn_submit = new System.Windows.Forms.Button();
             this.pn_QuestionNum = new System.Windows.Forms.Panel();
             this.lb_QuestionNum = new System.Windows.Forms.Label();
-            this.btn_clear = new System.Windows.Forms.Button();
             this.tpn_questionView.SuspendLayout();
             this.pn_questionStructure.SuspendLayout();
             this.pn_QuestionNum.SuspendLayout();
@@ -138,6 +138,18 @@
             this.pn_questionStructure.Size = new System.Drawing.Size(894, 423);
             this.pn_questionStructure.TabIndex = 1;
             // 
+            // btn_clear
+            // 
+            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_clear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_clear.Location = new System.Drawing.Point(685, 368);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(200, 52);
+            this.btn_clear.TabIndex = 9;
+            this.btn_clear.Text = "Xóa đáp án";
+            this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
             // btn_submit
             // 
             this.btn_submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -170,18 +182,6 @@
             this.lb_QuestionNum.TabIndex = 2;
             this.lb_QuestionNum.Text = "Phần I - Câu xx";
             this.lb_QuestionNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_clear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_clear.Location = new System.Drawing.Point(685, 368);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(200, 52);
-            this.btn_clear.TabIndex = 9;
-            this.btn_clear.Text = "Xóa đáp án";
-            this.btn_clear.UseVisualStyleBackColor = false;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // fMultipleChoiceQuestion
             // 
