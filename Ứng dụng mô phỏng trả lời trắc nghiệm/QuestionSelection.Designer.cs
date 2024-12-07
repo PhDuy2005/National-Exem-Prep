@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridView dgv_questionSelection;
+            //System.Windows.Forms.DataGridView dgv_questionSelection;
             this.lb_TimeLeft = new System.Windows.Forms.Label();
             this.lb_clock = new System.Windows.Forms.Label();
             this.btn_submit = new System.Windows.Forms.Button();
@@ -125,5 +125,6 @@
         private System.Windows.Forms.Label lb_clock;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridView dgv_questionSelection;
     }
 }
