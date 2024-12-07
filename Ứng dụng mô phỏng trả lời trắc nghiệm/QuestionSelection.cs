@@ -16,19 +16,20 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
     public partial class QuestionSelection : Form
     {
         private BindingSource bindingSource = new BindingSource();
+        Binding binding = null;
         public QuestionSelection(BindingSource bindingSource)
         {
             InitializeComponent();
             this.bindingSource = bindingSource;
-
-            loadQuestion();
+            dgv_questionSelection.DataSource = bindingSource;
+            //loadQuestion();
         }
         List<cQuestion> questions = new List<cQuestion>();
-        private void loadQuestion()
-        {
+        //private void loadQuestion()
+        //{
             
-            dgv_questionSelection.DataSource = bindingSource;
-        }
+        //    dgv_questionSelection.DataSource = bindingSource;
+        //}
 
         private void QuestionDoubleClicked(object sender, DataGridViewCellEventArgs e)
         {
@@ -53,5 +54,9 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             //    f.ShowDialog();
             //}
         }
+    }
+    public class QuestionList
+    {
+        public List<cQuestion> Questions { get; set; }
     }
 }
