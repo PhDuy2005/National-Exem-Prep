@@ -27,7 +27,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         List<cQuestion> questions = new List<cQuestion>();
         //private void loadQuestion()
         //{
-            
+
         //    dgv_questionSelection.DataSource = bindingSource;
         //}
 
@@ -41,6 +41,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             if (selectedQuestion is cMultipleChoieQuestion)
             {
                 fMultipleChoiceQuestion f = new fMultipleChoiceQuestion(selectedQuestion as cMultipleChoieQuestion);
+                f.OnDataSubmitted += F_OnDataSubmitted;
                 f.ShowDialog();
             }
             //else if (selectedQuestion is cMultiplyTrueFalseQuestion)
@@ -53,6 +54,16 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             //    fShortAnswerQuestion f = new fShortAnswerQuestion(selectedQuestion as cShortAnswerQuestion);
             //    f.ShowDialog();
             //}
+        }
+
+        private void F_OnDataSubmitted(cMultipleChoieQuestion data)
+        {
+            var selectedQuestion = dgv_questionSelection.CurrentRow.DataBoundItem as cMultipleChoieQuestion;
+            if (selectedQuestion != null)
+            {
+                selectedQuestion = data;
+                bindingSource.ResetBindings(false);
+            }
         }
     }
     public class QuestionList

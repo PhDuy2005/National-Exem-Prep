@@ -35,9 +35,10 @@
             this.lb_questionContent = new System.Windows.Forms.Label();
             this.rbtn_option1 = new System.Windows.Forms.RadioButton();
             this.pn_questionStructure = new System.Windows.Forms.Panel();
+            this.btn_submit = new System.Windows.Forms.Button();
             this.pn_QuestionNum = new System.Windows.Forms.Panel();
             this.lb_QuestionNum = new System.Windows.Forms.Label();
-            this.btn_submit = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.tpn_questionView.SuspendLayout();
             this.pn_questionStructure.SuspendLayout();
             this.pn_QuestionNum.SuspendLayout();
@@ -128,6 +129,7 @@
             // 
             // pn_questionStructure
             // 
+            this.pn_questionStructure.Controls.Add(this.btn_clear);
             this.pn_questionStructure.Controls.Add(this.btn_submit);
             this.pn_questionStructure.Controls.Add(this.pn_QuestionNum);
             this.pn_questionStructure.Controls.Add(this.tpn_questionView);
@@ -135,6 +137,18 @@
             this.pn_questionStructure.Name = "pn_questionStructure";
             this.pn_questionStructure.Size = new System.Drawing.Size(894, 423);
             this.pn_questionStructure.TabIndex = 1;
+            // 
+            // btn_submit
+            // 
+            this.btn_submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_submit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_submit.Location = new System.Drawing.Point(685, 0);
+            this.btn_submit.Name = "btn_submit";
+            this.btn_submit.Size = new System.Drawing.Size(200, 52);
+            this.btn_submit.TabIndex = 8;
+            this.btn_submit.Text = "Lưu đáp án";
+            this.btn_submit.UseVisualStyleBackColor = false;
+            this.btn_submit.Click += new System.EventHandler(this.SubmitAnswerClick);
             // 
             // pn_QuestionNum
             // 
@@ -157,17 +171,17 @@
             this.lb_QuestionNum.Text = "Phần I - Câu xx";
             this.lb_QuestionNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_submit
+            // btn_clear
             // 
-            this.btn_submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_submit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_submit.Location = new System.Drawing.Point(685, 0);
-            this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(200, 52);
-            this.btn_submit.TabIndex = 8;
-            this.btn_submit.Text = "Lưu đáp án";
-            this.btn_submit.UseVisualStyleBackColor = false;
-            this.btn_submit.Click += new System.EventHandler(this.SubmitAnswerClick);
+            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_clear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_clear.Location = new System.Drawing.Point(685, 368);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(200, 52);
+            this.btn_clear.TabIndex = 9;
+            this.btn_clear.Text = "Xóa đáp án";
+            this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // fMultipleChoiceQuestion
             // 
@@ -198,5 +212,6 @@
         private System.Windows.Forms.RadioButton rbtn_option2;
         private System.Windows.Forms.RadioButton rbtn_option1;
         private System.Windows.Forms.Button btn_submit;
+        private System.Windows.Forms.Button btn_clear;
     }
 }

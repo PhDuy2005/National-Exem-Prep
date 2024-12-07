@@ -14,6 +14,12 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
     {
         cMultipleChoieQuestion question;
         //BindingSource bindingSource = new BindingSource();
+        // Delegate định nghĩa kiểu phương thức cho event
+        public delegate void DataSubmittedHandler(cMultipleChoieQuestion data);
+
+        // Event sử dụng delegate
+        public event DataSubmittedHandler OnDataSubmitted;
+
         public fMultipleChoiceQuestion(cMultipleChoieQuestion question)
         {
             InitializeComponent();
@@ -31,11 +37,52 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             rbtn_option2.Text = question.Options[1];
             rbtn_option3.Text = question.Options[2];
             rbtn_option4.Text = question.Options[3];
+
+            rbtn_option1.Checked = false;
+            rbtn_option2.Checked = false;
+            rbtn_option3.Checked = false;
+            rbtn_option4.Checked = false;
         }
 
         private void SubmitAnswerClick(object sender, EventArgs e)
         {
+            string firstAnswer = question.GetStudentAnswer();
+            string answer;
+            if (rbtn_option1.Checked)
+            {
+                answer = "A";
+            }
+            else if (rbtn_option2.Checked)
+            {
+                answer = "B";
+            }
+            else if (rbtn_option3.Checked)
+            {
+                answer = "C";
+            }
+            else if (rbtn_option4.Checked)
+            {
+                answer = "D";
+            }
+            else
+            {
+                answer = "";
+            }
+            question.SetStudentAnswer(answer);
+            question.AnswerState = answer;
+            if (firstAnswer != answer)
+            {
+                OnDataSubmitted?.Invoke(question);
+            }
+            this.DialogResult = DialogResult.OK;
+        }
 
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            rbtn_option1.Checked = false;
+            rbtn_option2.Checked = false;
+            rbtn_option3.Checked = false;
+            rbtn_option4.Checked = false;
         }
     }
 }

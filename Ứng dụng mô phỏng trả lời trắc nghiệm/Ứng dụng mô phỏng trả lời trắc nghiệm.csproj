@@ -91,6 +91,12 @@
     <Compile Include="fMultipleChoiceQuestion.Designer.cs">
       <DependentUpon>fMultipleChoiceQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="fMultipleTrueFalseQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMultipleTrueFalseQuestion.Designer.cs">
+      <DependentUpon>fMultipleTrueFalseQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
