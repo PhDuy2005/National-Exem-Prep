@@ -80,7 +80,6 @@
             // btn_start
             // 
             this.btn_start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_start.Enabled = false;
             this.btn_start.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btn_start.Location = new System.Drawing.Point(495, 359);
             this.btn_start.Name = "btn_start";
@@ -88,6 +87,7 @@
             this.btn_start.TabIndex = 0;
             this.btn_start.Text = "Bắt đầu";
             this.btn_start.UseVisualStyleBackColor = false;
+            this.btn_start.Click += new System.EventHandler(this.StartClick);
             // 
             // lb_examType
             // 

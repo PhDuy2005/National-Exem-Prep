@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //System.Windows.Forms.DataGridView dgv_questionSelection;
             this.lb_TimeLeft = new System.Windows.Forms.Label();
             this.lb_clock = new System.Windows.Forms.Label();
             this.btn_submit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            dgv_questionSelection = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(dgv_questionSelection)).BeginInit();
+            this.dgv_questionSelection = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(dgv_questionSelection)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_TimeLeft
@@ -75,19 +74,6 @@
             this.btn_submit.Text = "Nộp bài";
             this.btn_submit.UseVisualStyleBackColor = false;
             // 
-            // dgv_questionSelection
-            // 
-            dgv_questionSelection.AllowUserToAddRows = false;
-            dgv_questionSelection.AllowUserToDeleteRows = false;
-            dgv_questionSelection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_questionSelection.Location = new System.Drawing.Point(18, 86);
-            dgv_questionSelection.Name = "dgv_questionSelection";
-            dgv_questionSelection.RowHeadersWidth = 51;
-            dgv_questionSelection.RowTemplate.Height = 24;
-            dgv_questionSelection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgv_questionSelection.Size = new System.Drawing.Size(770, 352);
-            dgv_questionSelection.TabIndex = 8;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -102,6 +88,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(346, 47);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
+            // dgv_questionSelection
+            // 
+            dgv_questionSelection.AllowUserToAddRows = false;
+            dgv_questionSelection.AllowUserToDeleteRows = false;
+            dgv_questionSelection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_questionSelection.Location = new System.Drawing.Point(18, 86);
+            dgv_questionSelection.Name = "dgv_questionSelection";
+            dgv_questionSelection.RowHeadersWidth = 51;
+            dgv_questionSelection.RowTemplate.Height = 24;
+            dgv_questionSelection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgv_questionSelection.Size = new System.Drawing.Size(770, 352);
+            dgv_questionSelection.TabIndex = 8;
+            dgv_questionSelection.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QuestionDoubleClicked);
+            // 
             // QuestionSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -112,9 +112,9 @@
             this.Controls.Add(this.btn_submit);
             this.Name = "QuestionSelection";
             this.Text = "QuestionSelection";
-            ((System.ComponentModel.ISupportInitialize)(dgv_questionSelection)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(dgv_questionSelection)).EndInit();
             this.ResumeLayout(false);
 
         }

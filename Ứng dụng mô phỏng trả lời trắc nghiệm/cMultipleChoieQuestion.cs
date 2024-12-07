@@ -8,7 +8,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 {
     public class cMultipleChoieQuestion : cQuestion
     {
-        private List<string> Options = new List<string> { };
+        public List<string> Options = new List<string> { };
         override public float getScore()
         {
             if (StudentAnswer == correctAnswer)
