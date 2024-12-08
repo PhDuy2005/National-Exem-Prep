@@ -123,6 +123,7 @@
             this.btn_clear.TabIndex = 9;
             this.btn_clear.Text = "Xóa đáp án";
             this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_submit
             // 
@@ -443,6 +444,7 @@
             this.tbDigit1.Size = new System.Drawing.Size(35, 34);
             this.tbDigit1.TabIndex = 7;
             this.tbDigit1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbDigit1.TextChanged += new System.EventHandler(this.tbDigitTextChanged);
             // 
             // tbDigit2
             // 
@@ -452,6 +454,7 @@
             this.tbDigit2.Size = new System.Drawing.Size(35, 34);
             this.tbDigit2.TabIndex = 7;
             this.tbDigit2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbDigit2.TextChanged += new System.EventHandler(this.tbDigitTextChanged);
             // 
             // tbDigit3
             // 
@@ -461,6 +464,7 @@
             this.tbDigit3.Size = new System.Drawing.Size(35, 34);
             this.tbDigit3.TabIndex = 7;
             this.tbDigit3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbDigit3.TextChanged += new System.EventHandler(this.tbDigitTextChanged);
             // 
             // tbDigit4
             // 
@@ -470,6 +474,7 @@
             this.tbDigit4.Size = new System.Drawing.Size(36, 34);
             this.tbDigit4.TabIndex = 7;
             this.tbDigit4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbDigit4.TextChanged += new System.EventHandler(this.tbDigitTextChanged);
             // 
             // ckbDigit1Minus
             // 

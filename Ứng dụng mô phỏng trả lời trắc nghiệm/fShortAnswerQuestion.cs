@@ -244,5 +244,35 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             OnDataSubmitted?.Invoke(question);
             this.DialogResult = DialogResult.OK;
         }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            //xóa textBox
+            foreach (var tbd in txtBoxDict)
+            {
+                tbd.Value.Text = string.Empty;
+            }
+
+            //xóa checkBox
+            foreach (var ckb_dict in ckBoxDict)
+            {
+                foreach (var cb in ckb_dict.Value)
+                {
+                    cb.Value.Checked = false;
+                }
+            }
+        }
+
+        private void tbDigitTextChanged(object sender, EventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            int n = tb.Text.Length;
+            if (n > 1)
+            {
+                tb.Text = tb.Text[n - 1].ToString();
+            }
+            //I want after typing an character, the cursor must be at the right of the text
+            tb.SelectionStart = tb.Text.Length;
+        }
     }
 }
