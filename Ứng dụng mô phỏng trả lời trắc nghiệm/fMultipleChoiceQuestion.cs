@@ -25,6 +25,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             InitializeComponent();
             this.question = question;
             ShowQuestion();
+            ShowAnswer();
             //this.bindingSource = bindingSource;
         }
         void ShowQuestion()
@@ -37,11 +38,35 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             rbtn_option2.Text = question.Options[1];
             rbtn_option3.Text = question.Options[2];
             rbtn_option4.Text = question.Options[3];
+            rbtn_invisible.Checked = true;
+        }
 
-            rbtn_option1.Checked = false;
-            rbtn_option2.Checked = false;
-            rbtn_option3.Checked = false;
-            rbtn_option4.Checked = false;
+        void ShowAnswer()
+        {
+            string answer = question.GetStudentAnswer();
+            if (answer == "A")
+            {
+                rbtn_option1.Checked = true;
+            }
+            else if (answer == "B")
+            {
+                rbtn_option2.Checked = true;
+            }
+            else if (answer == "C")
+            {
+                rbtn_option3.Checked = true;
+            }
+            else if (answer == "D")
+            {
+                rbtn_option4.Checked = true;
+            }
+            else
+            {
+                rbtn_option1.Checked = false;
+                rbtn_option2.Checked = false;
+                rbtn_option3.Checked = false;
+                rbtn_option4.Checked = false;
+            }
         }
 
         private void SubmitAnswerClick(object sender, EventArgs e)

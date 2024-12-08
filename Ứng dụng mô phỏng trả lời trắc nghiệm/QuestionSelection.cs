@@ -16,20 +16,23 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
     public partial class QuestionSelection : Form
     {
         private BindingSource bindingSource = new BindingSource();
-        Binding binding = null;
+        private int TimeLimit;
+        private int TimeRemaining;
         public QuestionSelection(BindingSource bindingSource)
         {
             InitializeComponent();
             this.bindingSource = bindingSource;
             dgv_questionSelection.DataSource = bindingSource;
+            setTimer();
             //loadQuestion();
         }
-        List<cQuestion> questions = new List<cQuestion>();
-        //private void loadQuestion()
-        //{
-
-        //    dgv_questionSelection.DataSource = bindingSource;
-        //}
+        
+        void setTimer()
+        {
+            TimeLimit = 90 * 60;
+            TimeRemaining = TimeLimit;
+            timerCountdown.Start();
+        }
 
         private void QuestionDoubleClicked(object sender, DataGridViewCellEventArgs e)
         {
@@ -87,9 +90,19 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                 bindingSource.ResetBindings(false);
             }
         }
-    }
-    public class QuestionList
-    {
-        public List<cQuestion> Questions { get; set; }
+
+        private void timerCountdown_Tick(object sender, EventArgs e)
+        {
+            if (TimeRemaining > 0)
+            {
+                TimeRemaining--;
+                lb_clock.Text = TimeRemaining / 60 + ":" + TimeRemaining % 60;
+            }
+            else
+            {
+                timerCountdown.Stop();
+                MessageBox.Show("Hết giờ làm bài!");
+            }
+        }
     }
 }

@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lb_TimeLeft = new System.Windows.Forms.Label();
             this.lb_clock = new System.Windows.Forms.Label();
             this.btn_submit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.timerCountdown = new System.Windows.Forms.Timer(this.components);
             this.dgv_questionSelection = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(dgv_questionSelection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_questionSelection)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_TimeLeft
@@ -43,7 +45,7 @@
             this.lb_TimeLeft.AutoSize = true;
             this.lb_TimeLeft.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lb_TimeLeft.ForeColor = System.Drawing.Color.Red;
-            this.lb_TimeLeft.Location = new System.Drawing.Point(9, 6);
+            this.lb_TimeLeft.Location = new System.Drawing.Point(15, 15);
             this.lb_TimeLeft.Name = "lb_TimeLeft";
             this.lb_TimeLeft.Size = new System.Drawing.Size(215, 35);
             this.lb_TimeLeft.TabIndex = 0;
@@ -56,7 +58,7 @@
             this.lb_clock.AutoSize = true;
             this.lb_clock.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lb_clock.ForeColor = System.Drawing.Color.Red;
-            this.lb_clock.Location = new System.Drawing.Point(250, 6);
+            this.lb_clock.Location = new System.Drawing.Point(267, 15);
             this.lb_clock.Name = "lb_clock";
             this.lb_clock.Size = new System.Drawing.Size(78, 35);
             this.lb_clock.TabIndex = 1;
@@ -85,22 +87,27 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(346, 47);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(366, 66);
             this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // timerCountdown
+            // 
+            this.timerCountdown.Interval = 1000;
+            this.timerCountdown.Tick += new System.EventHandler(this.timerCountdown_Tick);
             // 
             // dgv_questionSelection
             // 
-            dgv_questionSelection.AllowUserToAddRows = false;
-            dgv_questionSelection.AllowUserToDeleteRows = false;
-            dgv_questionSelection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_questionSelection.Location = new System.Drawing.Point(18, 86);
-            dgv_questionSelection.Name = "dgv_questionSelection";
-            dgv_questionSelection.RowHeadersWidth = 51;
-            dgv_questionSelection.RowTemplate.Height = 24;
-            dgv_questionSelection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgv_questionSelection.Size = new System.Drawing.Size(770, 352);
-            dgv_questionSelection.TabIndex = 8;
-            dgv_questionSelection.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QuestionDoubleClicked);
+            this.dgv_questionSelection.AllowUserToAddRows = false;
+            this.dgv_questionSelection.AllowUserToDeleteRows = false;
+            this.dgv_questionSelection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_questionSelection.Location = new System.Drawing.Point(18, 86);
+            this.dgv_questionSelection.Name = "dgv_questionSelection";
+            this.dgv_questionSelection.RowHeadersWidth = 51;
+            this.dgv_questionSelection.RowTemplate.Height = 24;
+            this.dgv_questionSelection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_questionSelection.Size = new System.Drawing.Size(770, 352);
+            this.dgv_questionSelection.TabIndex = 8;
+            this.dgv_questionSelection.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QuestionDoubleClicked);
             // 
             // QuestionSelection
             // 
@@ -108,13 +115,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(dgv_questionSelection);
+            this.Controls.Add(this.dgv_questionSelection);
             this.Controls.Add(this.btn_submit);
             this.Name = "QuestionSelection";
             this.Text = "QuestionSelection";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(dgv_questionSelection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_questionSelection)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,6 +132,7 @@
         private System.Windows.Forms.Label lb_clock;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Timer timerCountdown;
         private System.Windows.Forms.DataGridView dgv_questionSelection;
     }
 }

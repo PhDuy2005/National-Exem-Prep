@@ -24,6 +24,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             InitializeComponent();
             this.question = question;
             ShowQuestion();
+            ShowAnswer();
         }
 
         void ShowQuestion()
@@ -37,15 +38,65 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             lbOption2.Text = question.Options[1];
             lbOption3.Text = question.Options[2];
             lbOption4.Text = question.Options[3];
+        }
 
-            ckbOptionFalse1.Checked = false;
-            ckbOptionFalse2.Checked = false;
-            ckbOptionFalse3.Checked = false;
-            ckbOptionFalse4.Checked = false;
-            ckbOptionTrue1.Checked = false;
-            ckbOptionTrue2.Checked = false;
-            ckbOptionTrue3.Checked = false;
-            ckbOptionTrue4.Checked = false;
+        void ShowAnswer()
+        {
+            string answer = question.GetStudentAnswer();
+            if (answer == string.Empty)
+                return;
+            if (answer[0] == 'D')
+            {
+                ckbOptionTrue1.Checked = true;
+            }
+            else if (answer[0] == 'S')
+            {
+                ckbOptionFalse1.Checked = true;
+            }
+            else if (answer[0] == 'M')
+            {
+                ckbOptionTrue1.Checked = true;
+                ckbOptionFalse1.Checked = true;
+            }
+            if (answer[1] == 'D')
+            {
+                ckbOptionTrue2.Checked = true;
+            }
+            else if (answer[1] == 'S')
+            {
+                ckbOptionFalse2.Checked = true;
+            }
+            else if (answer[1] == 'M')
+            {
+                ckbOptionTrue2.Checked = true;
+                ckbOptionFalse2.Checked = true;
+            }
+            if (answer[2] == 'D')
+            {
+                ckbOptionTrue3.Checked = true;
+            }
+            else if (answer[2] == 'S')
+            {
+                ckbOptionFalse3.Checked = true;
+            }
+            else if (answer[2] == 'M')
+            {
+                ckbOptionTrue3.Checked = true;
+                ckbOptionFalse3.Checked = true;
+            }
+            if (answer[3] == 'D')
+            {
+                ckbOptionTrue4.Checked = true;
+            }
+            else if (answer[3] == 'S')
+            {
+                ckbOptionFalse4.Checked = true;
+            }
+            else if (answer[3] == 'M')
+            {
+                ckbOptionTrue4.Checked = true;
+                ckbOptionFalse4.Checked = true;
+            }
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
