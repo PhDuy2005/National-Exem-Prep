@@ -50,11 +50,22 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                 f.OnDataSubmitted += MTFQ_OnDataSubmitted;
                 f.ShowDialog();
             }
-            //else if (selectedQuestion is cShortAnswerQuestion)
-            //{
-            //    fShortAnswerQuestion f = new fShortAnswerQuestion(selectedQuestion as cShortAnswerQuestion);
-            //    f.ShowDialog();
-            //}
+            else if (selectedQuestion is cShortAnswerQuestion)
+            {
+                fShortAnswerQuestion f = new fShortAnswerQuestion(selectedQuestion as cShortAnswerQuestion);
+                f.OnDataSubmitted += SAQ_OnDataSubmitted;
+                f.ShowDialog();
+            }
+        }
+
+        private void SAQ_OnDataSubmitted(cShortAnswerQuestion data)
+        {
+            var selectedQuestion = dgv_questionSelection.CurrentRow.DataBoundItem as cShortAnswerQuestion;
+            if (selectedQuestion != null)
+            {
+                selectedQuestion = data;
+                bindingSource.ResetBindings(false);
+            }
         }
 
         private void MTFQ_OnDataSubmitted(cMultiplyTrueFalseQuestion data)

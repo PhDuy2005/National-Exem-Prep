@@ -62,7 +62,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            string firstAnswer = question.GetStudentAnswer();
+            //string firstAnswer = question.GetStudentAnswer();
             string answer = "";
             int countBlank = 0;
             if (ckbOptionTrue1.Checked && ckbOptionFalse1.Checked)
