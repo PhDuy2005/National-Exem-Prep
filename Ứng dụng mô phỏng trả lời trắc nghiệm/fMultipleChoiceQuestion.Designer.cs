@@ -39,6 +39,7 @@
             this.btn_submit = new System.Windows.Forms.Button();
             this.pn_QuestionNum = new System.Windows.Forms.Panel();
             this.lb_QuestionNum = new System.Windows.Forms.Label();
+            this.rbtn_invisible = new System.Windows.Forms.RadioButton();
             this.tpn_questionView.SuspendLayout();
             this.pn_questionStructure.SuspendLayout();
             this.pn_QuestionNum.SuspendLayout();
@@ -46,21 +47,24 @@
             // 
             // tpn_questionView
             // 
+            this.tpn_questionView.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tpn_questionView.ColumnCount = 1;
             this.tpn_questionView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tpn_questionView.Controls.Add(this.rbtn_invisible, 0, 5);
             this.tpn_questionView.Controls.Add(this.rbtn_option4, 0, 4);
             this.tpn_questionView.Controls.Add(this.rbtn_option3, 0, 3);
             this.tpn_questionView.Controls.Add(this.rbtn_option2, 0, 2);
-            this.tpn_questionView.Controls.Add(this.lb_questionContent, 0, 0);
             this.tpn_questionView.Controls.Add(this.rbtn_option1, 0, 1);
+            this.tpn_questionView.Controls.Add(this.lb_questionContent, 0, 0);
             this.tpn_questionView.Location = new System.Drawing.Point(3, 80);
             this.tpn_questionView.Name = "tpn_questionView";
-            this.tpn_questionView.RowCount = 5;
+            this.tpn_questionView.RowCount = 6;
             this.tpn_questionView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tpn_questionView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tpn_questionView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tpn_questionView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tpn_questionView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tpn_questionView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1E-09F));
             this.tpn_questionView.Size = new System.Drawing.Size(882, 287);
             this.tpn_questionView.TabIndex = 0;
             // 
@@ -69,7 +73,7 @@
             this.rbtn_option4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtn_option4.AutoSize = true;
             this.rbtn_option4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.rbtn_option4.Location = new System.Drawing.Point(3, 251);
+            this.rbtn_option4.Location = new System.Drawing.Point(5, 245);
             this.rbtn_option4.Name = "rbtn_option4";
             this.rbtn_option4.Size = new System.Drawing.Size(94, 27);
             this.rbtn_option4.TabIndex = 4;
@@ -82,7 +86,7 @@
             this.rbtn_option3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtn_option3.AutoSize = true;
             this.rbtn_option3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.rbtn_option3.Location = new System.Drawing.Point(3, 208);
+            this.rbtn_option3.Location = new System.Drawing.Point(5, 203);
             this.rbtn_option3.Name = "rbtn_option3";
             this.rbtn_option3.Size = new System.Drawing.Size(94, 27);
             this.rbtn_option3.TabIndex = 3;
@@ -95,7 +99,7 @@
             this.rbtn_option2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtn_option2.AutoSize = true;
             this.rbtn_option2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.rbtn_option2.Location = new System.Drawing.Point(3, 165);
+            this.rbtn_option2.Location = new System.Drawing.Point(5, 161);
             this.rbtn_option2.Name = "rbtn_option2";
             this.rbtn_option2.Size = new System.Drawing.Size(94, 27);
             this.rbtn_option2.TabIndex = 2;
@@ -105,11 +109,11 @@
             // 
             // lb_questionContent
             // 
-            this.lb_questionContent.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lb_questionContent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_questionContent.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lb_questionContent.Location = new System.Drawing.Point(3, 8);
+            this.lb_questionContent.Location = new System.Drawing.Point(11, 6);
             this.lb_questionContent.Name = "lb_questionContent";
-            this.lb_questionContent.Size = new System.Drawing.Size(860, 97);
+            this.lb_questionContent.Size = new System.Drawing.Size(860, 100);
             this.lb_questionContent.TabIndex = 0;
             this.lb_questionContent.Text = "Nội dung câu hỏi";
             this.lb_questionContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,7 +123,7 @@
             this.rbtn_option1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbtn_option1.AutoSize = true;
             this.rbtn_option1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.rbtn_option1.Location = new System.Drawing.Point(3, 122);
+            this.rbtn_option1.Location = new System.Drawing.Point(5, 119);
             this.rbtn_option1.Name = "rbtn_option1";
             this.rbtn_option1.Size = new System.Drawing.Size(94, 27);
             this.rbtn_option1.TabIndex = 1;
@@ -183,6 +187,19 @@
             this.lb_QuestionNum.Text = "Phần I - Câu xx";
             this.lb_QuestionNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // rbtn_invisible
+            // 
+            this.rbtn_invisible.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtn_invisible.Font = new System.Drawing.Font("Segoe UI", 0.01F, System.Drawing.FontStyle.Bold);
+            this.rbtn_invisible.Location = new System.Drawing.Point(5, 284);
+            this.rbtn_invisible.Name = "rbtn_invisible";
+            this.rbtn_invisible.Size = new System.Drawing.Size(10, 1);
+            this.rbtn_invisible.TabIndex = 5;
+            this.rbtn_invisible.TabStop = true;
+            this.rbtn_invisible.Text = "invisible";
+            this.rbtn_invisible.UseVisualStyleBackColor = true;
+            this.rbtn_invisible.Visible = false;
+            // 
             // fMultipleChoiceQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,5 +230,6 @@
         private System.Windows.Forms.RadioButton rbtn_option1;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.RadioButton rbtn_invisible;
     }
 }

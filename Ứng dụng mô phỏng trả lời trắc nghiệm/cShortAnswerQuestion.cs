@@ -8,6 +8,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 {
     public class cShortAnswerQuestion : cQuestion
     {
+        public Dictionary<int, string> currentAnswer = new Dictionary<int, string>();
         public override float getScore()
         {
             if (StudentAnswer == correctAnswer)
@@ -25,6 +26,10 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             this.Note = note;
             this.correctAnswer = correctAnswer;
             this.scrore = score;
+            for (int i = 1; i <= 4; i++)
+            {
+                currentAnswer[i] = ""; // Gán giá trị ban đầu là chuỗi rỗng
+            }
         }
     }
 }

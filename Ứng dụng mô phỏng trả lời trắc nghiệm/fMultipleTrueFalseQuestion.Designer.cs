@@ -34,21 +34,21 @@
             this.pn_QuestionNum = new System.Windows.Forms.Panel();
             this.lb_QuestionNum = new System.Windows.Forms.Label();
             this.tpn_questionView = new System.Windows.Forms.TableLayoutPanel();
+            this.lbOption4 = new System.Windows.Forms.Label();
+            this.lbOption3 = new System.Windows.Forms.Label();
+            this.lbOption2 = new System.Windows.Forms.Label();
+            this.ckbOptionFalse4 = new System.Windows.Forms.CheckBox();
+            this.ckbOptionTrue4 = new System.Windows.Forms.CheckBox();
+            this.ckbOptionFalse3 = new System.Windows.Forms.CheckBox();
+            this.ckbOptionTrue3 = new System.Windows.Forms.CheckBox();
+            this.ckbOptionFalse2 = new System.Windows.Forms.CheckBox();
+            this.ckbOptionTrue2 = new System.Windows.Forms.CheckBox();
+            this.ckbOptionFalse1 = new System.Windows.Forms.CheckBox();
             this.lb_questionContent = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ckbOptionTrue1 = new System.Windows.Forms.CheckBox();
-            this.ckbOptionFalse1 = new System.Windows.Forms.CheckBox();
-            this.ckbOptionTrue2 = new System.Windows.Forms.CheckBox();
-            this.ckbOptionFalse2 = new System.Windows.Forms.CheckBox();
-            this.ckbOptionTrue3 = new System.Windows.Forms.CheckBox();
-            this.ckbOptionFalse3 = new System.Windows.Forms.CheckBox();
-            this.ckbOptionTrue4 = new System.Windows.Forms.CheckBox();
-            this.ckbOptionFalse4 = new System.Windows.Forms.CheckBox();
             this.lbOption1 = new System.Windows.Forms.Label();
-            this.lbOption2 = new System.Windows.Forms.Label();
-            this.lbOption3 = new System.Windows.Forms.Label();
-            this.lbOption4 = new System.Windows.Forms.Label();
             this.pn_questionStructure.SuspendLayout();
             this.pn_QuestionNum.SuspendLayout();
             this.tpn_questionView.SuspendLayout();
@@ -112,6 +112,7 @@
             // 
             // tpn_questionView
             // 
+            this.tpn_questionView.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tpn_questionView.ColumnCount = 3;
             this.tpn_questionView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tpn_questionView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
@@ -142,13 +143,116 @@
             this.tpn_questionView.Size = new System.Drawing.Size(882, 287);
             this.tpn_questionView.TabIndex = 0;
             // 
+            // lbOption4
+            // 
+            this.lbOption4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbOption4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lbOption4.Location = new System.Drawing.Point(4, 248);
+            this.lbOption4.Name = "lbOption4";
+            this.lbOption4.Size = new System.Drawing.Size(729, 33);
+            this.lbOption4.TabIndex = 18;
+            this.lbOption4.Text = "Option4";
+            this.lbOption4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbOption3
+            // 
+            this.lbOption3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbOption3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lbOption3.Location = new System.Drawing.Point(4, 204);
+            this.lbOption3.Name = "lbOption3";
+            this.lbOption3.Size = new System.Drawing.Size(729, 33);
+            this.lbOption3.TabIndex = 17;
+            this.lbOption3.Text = "Option3";
+            this.lbOption3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbOption2
+            // 
+            this.lbOption2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbOption2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lbOption2.Location = new System.Drawing.Point(4, 161);
+            this.lbOption2.Name = "lbOption2";
+            this.lbOption2.Size = new System.Drawing.Size(729, 33);
+            this.lbOption2.TabIndex = 16;
+            this.lbOption2.Text = "Option2";
+            this.lbOption2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ckbOptionFalse4
+            // 
+            this.ckbOptionFalse4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ckbOptionFalse4.AutoSize = true;
+            this.ckbOptionFalse4.Location = new System.Drawing.Point(838, 256);
+            this.ckbOptionFalse4.Name = "ckbOptionFalse4";
+            this.ckbOptionFalse4.Size = new System.Drawing.Size(18, 17);
+            this.ckbOptionFalse4.TabIndex = 14;
+            this.ckbOptionFalse4.UseVisualStyleBackColor = true;
+            // 
+            // ckbOptionTrue4
+            // 
+            this.ckbOptionTrue4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ckbOptionTrue4.AutoSize = true;
+            this.ckbOptionTrue4.Location = new System.Drawing.Point(765, 256);
+            this.ckbOptionTrue4.Name = "ckbOptionTrue4";
+            this.ckbOptionTrue4.Size = new System.Drawing.Size(18, 17);
+            this.ckbOptionTrue4.TabIndex = 13;
+            this.ckbOptionTrue4.UseVisualStyleBackColor = true;
+            // 
+            // ckbOptionFalse3
+            // 
+            this.ckbOptionFalse3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ckbOptionFalse3.AutoSize = true;
+            this.ckbOptionFalse3.Location = new System.Drawing.Point(838, 212);
+            this.ckbOptionFalse3.Name = "ckbOptionFalse3";
+            this.ckbOptionFalse3.Size = new System.Drawing.Size(18, 17);
+            this.ckbOptionFalse3.TabIndex = 12;
+            this.ckbOptionFalse3.UseVisualStyleBackColor = true;
+            // 
+            // ckbOptionTrue3
+            // 
+            this.ckbOptionTrue3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ckbOptionTrue3.AutoSize = true;
+            this.ckbOptionTrue3.Location = new System.Drawing.Point(765, 212);
+            this.ckbOptionTrue3.Name = "ckbOptionTrue3";
+            this.ckbOptionTrue3.Size = new System.Drawing.Size(18, 17);
+            this.ckbOptionTrue3.TabIndex = 11;
+            this.ckbOptionTrue3.UseVisualStyleBackColor = true;
+            // 
+            // ckbOptionFalse2
+            // 
+            this.ckbOptionFalse2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ckbOptionFalse2.AutoSize = true;
+            this.ckbOptionFalse2.Location = new System.Drawing.Point(838, 169);
+            this.ckbOptionFalse2.Name = "ckbOptionFalse2";
+            this.ckbOptionFalse2.Size = new System.Drawing.Size(18, 17);
+            this.ckbOptionFalse2.TabIndex = 10;
+            this.ckbOptionFalse2.UseVisualStyleBackColor = true;
+            // 
+            // ckbOptionTrue2
+            // 
+            this.ckbOptionTrue2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ckbOptionTrue2.AutoSize = true;
+            this.ckbOptionTrue2.Location = new System.Drawing.Point(765, 169);
+            this.ckbOptionTrue2.Name = "ckbOptionTrue2";
+            this.ckbOptionTrue2.Size = new System.Drawing.Size(18, 17);
+            this.ckbOptionTrue2.TabIndex = 9;
+            this.ckbOptionTrue2.UseVisualStyleBackColor = true;
+            // 
+            // ckbOptionFalse1
+            // 
+            this.ckbOptionFalse1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ckbOptionFalse1.AutoSize = true;
+            this.ckbOptionFalse1.Location = new System.Drawing.Point(838, 126);
+            this.ckbOptionFalse1.Name = "ckbOptionFalse1";
+            this.ckbOptionFalse1.Size = new System.Drawing.Size(18, 17);
+            this.ckbOptionFalse1.TabIndex = 8;
+            this.ckbOptionFalse1.UseVisualStyleBackColor = true;
+            // 
             // lb_questionContent
             // 
             this.lb_questionContent.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lb_questionContent.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lb_questionContent.Location = new System.Drawing.Point(3, 8);
+            this.lb_questionContent.Location = new System.Drawing.Point(4, 8);
             this.lb_questionContent.Name = "lb_questionContent";
-            this.lb_questionContent.Size = new System.Drawing.Size(733, 97);
+            this.lb_questionContent.Size = new System.Drawing.Size(729, 97);
             this.lb_questionContent.TabIndex = 0;
             this.lb_questionContent.Text = "Nội dung câu hỏi";
             this.lb_questionContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -157,7 +261,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(749, 91);
+            this.label1.Location = new System.Drawing.Point(747, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 23);
             this.label1.TabIndex = 5;
@@ -168,7 +272,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(826, 91);
+            this.label2.Location = new System.Drawing.Point(825, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 23);
             this.label2.TabIndex = 6;
@@ -179,125 +283,22 @@
             // 
             this.ckbOptionTrue1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ckbOptionTrue1.AutoSize = true;
-            this.ckbOptionTrue1.Location = new System.Drawing.Point(767, 127);
+            this.ckbOptionTrue1.Location = new System.Drawing.Point(765, 126);
             this.ckbOptionTrue1.Name = "ckbOptionTrue1";
             this.ckbOptionTrue1.Size = new System.Drawing.Size(18, 17);
             this.ckbOptionTrue1.TabIndex = 7;
             this.ckbOptionTrue1.UseVisualStyleBackColor = true;
             // 
-            // ckbOptionFalse1
-            // 
-            this.ckbOptionFalse1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ckbOptionFalse1.AutoSize = true;
-            this.ckbOptionFalse1.Location = new System.Drawing.Point(839, 127);
-            this.ckbOptionFalse1.Name = "ckbOptionFalse1";
-            this.ckbOptionFalse1.Size = new System.Drawing.Size(18, 17);
-            this.ckbOptionFalse1.TabIndex = 8;
-            this.ckbOptionFalse1.UseVisualStyleBackColor = true;
-            // 
-            // ckbOptionTrue2
-            // 
-            this.ckbOptionTrue2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ckbOptionTrue2.AutoSize = true;
-            this.ckbOptionTrue2.Location = new System.Drawing.Point(767, 170);
-            this.ckbOptionTrue2.Name = "ckbOptionTrue2";
-            this.ckbOptionTrue2.Size = new System.Drawing.Size(18, 17);
-            this.ckbOptionTrue2.TabIndex = 9;
-            this.ckbOptionTrue2.UseVisualStyleBackColor = true;
-            // 
-            // ckbOptionFalse2
-            // 
-            this.ckbOptionFalse2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ckbOptionFalse2.AutoSize = true;
-            this.ckbOptionFalse2.Location = new System.Drawing.Point(839, 170);
-            this.ckbOptionFalse2.Name = "ckbOptionFalse2";
-            this.ckbOptionFalse2.Size = new System.Drawing.Size(18, 17);
-            this.ckbOptionFalse2.TabIndex = 10;
-            this.ckbOptionFalse2.UseVisualStyleBackColor = true;
-            // 
-            // ckbOptionTrue3
-            // 
-            this.ckbOptionTrue3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ckbOptionTrue3.AutoSize = true;
-            this.ckbOptionTrue3.Location = new System.Drawing.Point(767, 213);
-            this.ckbOptionTrue3.Name = "ckbOptionTrue3";
-            this.ckbOptionTrue3.Size = new System.Drawing.Size(18, 17);
-            this.ckbOptionTrue3.TabIndex = 11;
-            this.ckbOptionTrue3.UseVisualStyleBackColor = true;
-            // 
-            // ckbOptionFalse3
-            // 
-            this.ckbOptionFalse3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ckbOptionFalse3.AutoSize = true;
-            this.ckbOptionFalse3.Location = new System.Drawing.Point(839, 213);
-            this.ckbOptionFalse3.Name = "ckbOptionFalse3";
-            this.ckbOptionFalse3.Size = new System.Drawing.Size(18, 17);
-            this.ckbOptionFalse3.TabIndex = 12;
-            this.ckbOptionFalse3.UseVisualStyleBackColor = true;
-            // 
-            // ckbOptionTrue4
-            // 
-            this.ckbOptionTrue4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ckbOptionTrue4.AutoSize = true;
-            this.ckbOptionTrue4.Location = new System.Drawing.Point(767, 256);
-            this.ckbOptionTrue4.Name = "ckbOptionTrue4";
-            this.ckbOptionTrue4.Size = new System.Drawing.Size(18, 17);
-            this.ckbOptionTrue4.TabIndex = 13;
-            this.ckbOptionTrue4.UseVisualStyleBackColor = true;
-            // 
-            // ckbOptionFalse4
-            // 
-            this.ckbOptionFalse4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ckbOptionFalse4.AutoSize = true;
-            this.ckbOptionFalse4.Location = new System.Drawing.Point(839, 256);
-            this.ckbOptionFalse4.Name = "ckbOptionFalse4";
-            this.ckbOptionFalse4.Size = new System.Drawing.Size(18, 17);
-            this.ckbOptionFalse4.TabIndex = 14;
-            this.ckbOptionFalse4.UseVisualStyleBackColor = true;
-            // 
             // lbOption1
             // 
             this.lbOption1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbOption1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lbOption1.Location = new System.Drawing.Point(3, 119);
+            this.lbOption1.Location = new System.Drawing.Point(4, 118);
             this.lbOption1.Name = "lbOption1";
-            this.lbOption1.Size = new System.Drawing.Size(733, 33);
+            this.lbOption1.Size = new System.Drawing.Size(729, 33);
             this.lbOption1.TabIndex = 15;
             this.lbOption1.Text = "Option1";
             this.lbOption1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbOption2
-            // 
-            this.lbOption2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbOption2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lbOption2.Location = new System.Drawing.Point(3, 162);
-            this.lbOption2.Name = "lbOption2";
-            this.lbOption2.Size = new System.Drawing.Size(733, 33);
-            this.lbOption2.TabIndex = 16;
-            this.lbOption2.Text = "Option2";
-            this.lbOption2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbOption3
-            // 
-            this.lbOption3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbOption3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lbOption3.Location = new System.Drawing.Point(3, 205);
-            this.lbOption3.Name = "lbOption3";
-            this.lbOption3.Size = new System.Drawing.Size(733, 33);
-            this.lbOption3.TabIndex = 17;
-            this.lbOption3.Text = "Option3";
-            this.lbOption3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbOption4
-            // 
-            this.lbOption4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbOption4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lbOption4.Location = new System.Drawing.Point(3, 248);
-            this.lbOption4.Name = "lbOption4";
-            this.lbOption4.Size = new System.Drawing.Size(733, 33);
-            this.lbOption4.TabIndex = 18;
-            this.lbOption4.Text = "Option4";
-            this.lbOption4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // fMultipleTrueFalseQuestion
             // 
