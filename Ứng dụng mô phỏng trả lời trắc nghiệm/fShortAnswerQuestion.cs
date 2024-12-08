@@ -106,7 +106,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         {
             //Hiển thị câu hỏi
             lb_questionContent.Text = question.GetQuestionContent();
-            lb_QuestionNum.Text = "Phần I - Câu " + question.QuestionID.ToString();
+            lb_QuestionNum.Text = "Phần III - Câu " + question.QuestionID.ToString();
         }
         void ShowCurrentAnswer()
         {

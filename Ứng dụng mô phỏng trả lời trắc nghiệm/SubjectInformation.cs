@@ -17,9 +17,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         List<cQuestion> questions = new List<cQuestion>();
         BindingSource bs = new BindingSource();
         ExamInformation eInfo;
-        private void ReadDatasType1(ExcelWorksheet ws, int[] limits, float pt3Score)
-        {
-            Dictionary<string, int> columnIndex = new Dictionary<string, int>()
+        Dictionary<string, int> columnIndex = new Dictionary<string, int>()
             {
                 {"ID", 2 },
                 {"QuestionContent", 3 },
@@ -30,6 +28,8 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                 {"CorrectAnswer", 8 },
                 {"Note", 9 }
             };
+        private void ReadDatasType1(ExcelWorksheet ws, int[] limits, float pt3Score)
+        {
             int[] start = new int[] { 8, 32, 38 };
 
             //Đọc đề phần I
@@ -113,17 +113,6 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         void ReadForeignLanguageExamData(ExcelWorksheet ws)
         {
             int start = 47;
-            Dictionary<string, int> columnIndex = new Dictionary<string, int>()
-            {
-                {"ID", 2 },
-                {"QuestionContent", 3 },
-                {"OptionA", 4 },
-                {"OptionB", 5 },
-                {"OptionC", 6 },
-                {"OptionD", 7 },
-                {"CorrectAnswer", 8 },
-                {"Note", 9 }
-            };
 
             for (int i = start; i < start + 40; i++)
             {
@@ -169,7 +158,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                 int start = workSheet.Dimension.Start.Row;
                 int examType = workSheet.Cells[start + 1, 1].GetValue<int>();
                 int questionType = workSheet.Cells[start + 3, 1].GetValue<int>();
-                string subject = workSheet.Cells[4, 7].GetValue<string>();
+                string subject;
                 int numberOfQuestion;
                 int Time;
 
@@ -179,6 +168,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                 switch (examType)
                 {
                     case 1:
+                        subject = workSheet.Cells[4, 7].GetValue<string>();
                         switch (questionType)
                         {
                             case 1:
@@ -218,6 +208,13 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                         eInfo = new ExamInformation(subject, Time, numberOfQuestion, "Đề chuẩn THPTQG");
                         break;
                     case 2:
+                        numberOfQuestion = workSheet.Cells[90, 2].GetValue<int>();
+                        Time = workSheet.Cells[91, 2].GetValue<int>();
+                        subject = workSheet.Cells[91, 4].GetValue<string>();
+                        string questionType_str = workSheet.Cells[89, 3].GetValue<string>();
+                        eInfo = new ExamInformation(subject, Time, numberOfQuestion, questionType_str);
+
+                        ReadDatasType2(workSheet, numberOfQuestion, questionType);
                         break;
                     default:
                         MessageBox.Show("Loại đề không hợp lệ, vui lòng kiểm tra lại file Excel");
@@ -231,6 +228,65 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             }
             bs.DataSource = questions;
         }
+
+        void ReadDatasType2(ExcelWorksheet ws, int numberOfQuestion, int questionType)
+        {
+            int start = 94;
+            cQuestion question;
+            var columnIndex = this.columnIndex.ToDictionary(entry => entry.Key, entry => entry.Value);
+            columnIndex["Note"] = 10;
+            columnIndex["Score"] = 9;
+            for (int i = start; i < start + numberOfQuestion; i++)
+            {
+                try
+                {
+                    int id = ws.Cells[i, 2].GetValue<int>();
+                    string questionContent =
+                        ws.Cells[i, columnIndex["QuestionContent"]].GetValue<string>();
+                    List<string> options;
+                    string correctAnswer = ws.Cells[i, columnIndex["CorrectAnswer"]].GetValue<string>();
+                    string note = ws.Cells[i, columnIndex["Note"]].GetValue<string>();
+                    float score = ws.Cells[i, columnIndex["Score"]].GetValue<float>();
+                    switch (questionType)
+                    {
+                        case 1:
+                            options = new List<string>()
+                            {
+                                ws.Cells[i, columnIndex["OptionA"]].GetValue<string>(),
+                                ws.Cells[i, columnIndex["OptionB"]].GetValue<string>(),
+                                ws.Cells[i, columnIndex["OptionC"]].GetValue<string>(),
+                                ws.Cells[i, columnIndex["OptionD"]].GetValue<string>()
+                            };
+                            question = new cMultipleChoieQuestion("I", id, questionContent,
+                                note, correctAnswer, score, options);
+                            questions.Add(question);
+                            break;
+                        case 2:
+                            options = new List<string>()
+                            {
+                                ws.Cells[i, columnIndex["OptionA"]].GetValue<string>(),
+                                ws.Cells[i, columnIndex["OptionB"]].GetValue<string>(),
+                                ws.Cells[i, columnIndex["OptionC"]].GetValue<string>(),
+                                ws.Cells[i, columnIndex["OptionD"]].GetValue<string>()
+                            };
+                            question = new cMultiplyTrueFalseQuestion("II", id, questionContent,
+                                note, correctAnswer, 1, options);
+                            questions.Add(question);
+                            break;
+                        case 3:
+                            question = new cShortAnswerQuestion("III", id, questionContent,
+                                note, correctAnswer, score);
+                            questions.Add(question);
+                            break;
+                        default:
+                            question = new cQuestion();
+                            break;
+                    }
+                }
+                catch { }
+            }
+        }
+
         public SubjectInformation()
         {
             InitializeComponent();
@@ -248,7 +304,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 
         private void StartClick(object sender, EventArgs e)
         {
-            QuestionSelection f = new QuestionSelection(bs);
+            QuestionSelection f = new QuestionSelection(bs, eInfo.Time);
             f.Show();
             this.Hide();
         }

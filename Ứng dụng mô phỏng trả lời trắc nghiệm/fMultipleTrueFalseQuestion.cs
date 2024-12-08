@@ -29,7 +29,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 
         void ShowQuestion()
         {
-            lb_QuestionNum.Text = "Phần I - Câu " + question.QuestionID.ToString();
+            lb_QuestionNum.Text = "Phần II - Câu " + question.QuestionID.ToString();
             lb_questionContent.Text = question.GetQuestionContent();
             //lbQuestionContent.Text = question.QuestionContent;
             //lbQuestionID.Text = question.QuestionID.ToString();

@@ -18,18 +18,18 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         private BindingSource bindingSource = new BindingSource();
         private int TimeLimit;
         private int TimeRemaining;
-        public QuestionSelection(BindingSource bindingSource)
+        public QuestionSelection(BindingSource bindingSource, int Time)
         {
             InitializeComponent();
             this.bindingSource = bindingSource;
             dgv_questionSelection.DataSource = bindingSource;
-            setTimer();
+            setTimer(Time);
             //loadQuestion();
         }
         
-        void setTimer()
+        void setTimer(int Time)
         {
-            TimeLimit = 90 * 60;
+            TimeLimit = Time * 60;
             TimeRemaining = TimeLimit;
             timerCountdown.Start();
         }
