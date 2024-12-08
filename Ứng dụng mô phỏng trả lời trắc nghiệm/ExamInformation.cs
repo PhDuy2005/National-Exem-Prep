@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 {
-    internal class ExamInformation
+    public class ExamInformation
     {
         public string Subject { get; set; }
         public int Time {  get; set; }
