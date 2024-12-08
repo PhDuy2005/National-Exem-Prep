@@ -16,6 +16,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
     {
         List<cQuestion> questions = new List<cQuestion>();
         BindingSource bs = new BindingSource();
+        ExamInformation eInfo;
         private void ReadDatasType1(ExcelWorksheet ws, int[] limits, float pt3Score)
         {
             Dictionary<string, int> columnIndex = new Dictionary<string, int>()
@@ -109,6 +110,48 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             }
         }
 
+        void ReadForeignLanguageExamData(ExcelWorksheet ws)
+        {
+            int start = 47;
+            Dictionary<string, int> columnIndex = new Dictionary<string, int>()
+            {
+                {"ID", 2 },
+                {"QuestionContent", 3 },
+                {"OptionA", 4 },
+                {"OptionB", 5 },
+                {"OptionC", 6 },
+                {"OptionD", 7 },
+                {"CorrectAnswer", 8 },
+                {"Note", 9 }
+            };
+
+            for (int i = start; i < start + 40; i++)
+            {
+                try
+                {
+                    int id = ws.Cells[i, columnIndex["ID"]].GetValue<int>();
+                    string questionContent =
+                        ws.Cells[i, columnIndex["QuestionContent"]].GetValue<string>();
+                    List<string> options = new List<string>()
+                    {
+                        ws.Cells[i, columnIndex["OptionA"]].GetValue<string>(),
+                        ws.Cells[i, columnIndex["OptionB"]].GetValue<string>(),
+                        ws.Cells[i, columnIndex["OptionC"]].GetValue<string>(),
+                        ws.Cells[i, columnIndex["OptionD"]].GetValue<string>()
+                    };
+                    string correctAnswer =
+                        ws.Cells[i, columnIndex["CorrectAnswer"]].GetValue<string>();
+                    string note = ws.Cells[i, columnIndex["Note"]].GetValue<string>();
+
+                    cMultipleChoieQuestion question =
+                        new cMultipleChoieQuestion("I", id, questionContent,
+                        note, correctAnswer, 0.25f, options);
+                    questions.Add(question);
+                }
+                catch { }
+            }
+        }
+
         private void loadQuestion()
         {
             //Cài bản quyền
@@ -126,6 +169,9 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                 int start = workSheet.Dimension.Start.Row;
                 int examType = workSheet.Cells[start + 1, 1].GetValue<int>();
                 int questionType = workSheet.Cells[start + 3, 1].GetValue<int>();
+                string subject = workSheet.Cells[4, 7].GetValue<string>();
+                int numberOfQuestion;
+                int Time;
 
                 int[] limitQuestion = new int[] { 0, 0, 0 };
                 float part3Score = 0.25f;
@@ -138,24 +184,38 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                             case 1:
                                 limitQuestion = new int[] { 12, 4, 6 };
                                 part3Score = 0.5f;
+                                numberOfQuestion = 22;
+                                Time = 90;
                                 break;
                             case 2:
                                 limitQuestion = new int[] { 18, 4, 6 };
+                                numberOfQuestion = 28;
+                                Time = 50;
                                 break;
                             case 3:
                                 limitQuestion = new int[] { 24, 4, 0 };
+                                numberOfQuestion = 28;
+                                Time = 50;
                                 break;
                             case 4:
                                 limitQuestion = new int[] { 24, 6, 0 };
+                                numberOfQuestion = 30;
+                                Time = 50;
                                 break;
                             case 5:
                                 limitQuestion = new int[] { 40, 0, 0 };
+                                numberOfQuestion = 40;
+                                Time = 50;
                                 break;
                             default:
                                 MessageBox.Show("Loại câu hỏi không hợp lệ, vui lòng kiểm tra file Excel");
                                 return;
                         }
-                        ReadDatasType1(workSheet, limitQuestion, part3Score);
+                        if (questionType == 5)
+                            ReadForeignLanguageExamData(workSheet);
+                        else
+                            ReadDatasType1(workSheet, limitQuestion, part3Score);
+                        eInfo = new ExamInformation(subject, Time, numberOfQuestion, "Đề chuẩn THPTQG");
                         break;
                     case 2:
                         break;
@@ -175,6 +235,15 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         {
             InitializeComponent();
             loadQuestion();
+            ShowInformation();
+        }
+
+        void ShowInformation()
+        {
+            lb_subject.Text = "Môn học: " + eInfo.Subject;
+            lb_time.Text = "Thời gian: " + eInfo.Time + " phút";
+            lb_numberOfQuestion.Text = "Số câu hỏi: " + eInfo.NumberOfQuestions;
+            lb_examType.Text = "Loại đề: " + eInfo.ExamType;
         }
 
         private void StartClick(object sender, EventArgs e)

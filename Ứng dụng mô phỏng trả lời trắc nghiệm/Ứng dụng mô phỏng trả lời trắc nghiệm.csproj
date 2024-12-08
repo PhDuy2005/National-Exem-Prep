@@ -85,6 +85,7 @@
     <Compile Include="cMultiplyTrueFalseQuestion.cs" />
     <Compile Include="cQuestion.cs" />
     <Compile Include="cShortAnswerQuestion.cs" />
+    <Compile Include="ExamInformation.cs" />
     <Compile Include="fMultipleChoiceQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
