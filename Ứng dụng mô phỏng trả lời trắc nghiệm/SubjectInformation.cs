@@ -98,6 +98,8 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                         ws.Cells[i, columnIndex["QuestionContent"]].GetValue<string>();
                     string correctAnswer =
                         ws.Cells[i, columnIndex["CorrectAnswer"]].GetValue<string>();
+                    while (correctAnswer.Length < 4)
+                        correctAnswer += "_";
                     string note = ws.Cells[i, columnIndex["Note"]].GetValue<string>();
 
                     cShortAnswerQuestion question =

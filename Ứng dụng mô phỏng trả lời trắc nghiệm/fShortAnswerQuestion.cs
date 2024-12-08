@@ -238,6 +238,8 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                         newStudentAnswer += "M";
                     }
                 }
+                else
+                    newStudentAnswer += "_";
             }
             question.SetStudentAnswer(newStudentAnswer);
 
