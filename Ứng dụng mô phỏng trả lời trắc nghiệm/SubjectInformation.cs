@@ -151,7 +151,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             try
             {
                 //mở file excel
-                var package = new ExcelPackage(new System.IO.FileInfo("Đề Mẫu Toán.xlsx"));
+                var package = new ExcelPackage(new System.IO.FileInfo("Đề Mẫu DS Toán.xlsx"));
                 //lấy sheet đầu tiên
                 ExcelWorksheet workSheet = package.Workbook.Worksheets["Sheet1"];
 
@@ -304,7 +304,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 
         private void StartClick(object sender, EventArgs e)
         {
-            QuestionSelection f = new QuestionSelection(bs, eInfo.Time);
+            QuestionSelection f = new QuestionSelection(bs, eInfo);
             f.Show();
             this.Hide();
         }

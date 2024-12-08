@@ -18,12 +18,14 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         private BindingSource bindingSource = new BindingSource();
         private int TimeLimit;
         private int TimeRemaining;
-        public QuestionSelection(BindingSource bindingSource, int Time)
+        ExamInformation eInfo;
+        public QuestionSelection(BindingSource bindingSource, ExamInformation eInfo)
         {
             InitializeComponent();
             this.bindingSource = bindingSource;
             dgv_questionSelection.DataSource = bindingSource;
-            setTimer(Time);
+            this.eInfo = eInfo;
+            setTimer(this.eInfo.Time);
             //loadQuestion();
         }
         
