@@ -18,12 +18,14 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         public string AnswerState { get; set; } = "";
         public string Note { get; protected set; }
         protected string correctAnswer;
-        protected float scrore;
+        protected float maxScore;
         public virtual float getScore() => 0;
         public void setScore() { }
         public cQuestion() { }
         public string GetQuestionContent() => QuestionContent;
         public void SetStudentAnswer(string answer) => StudentAnswer = answer;
         public string GetStudentAnswer() => StudentAnswer;
+        public string GetCorrectAnswer() => correctAnswer;
+        public float GetMaxScore() => maxScore;
     }
 }
