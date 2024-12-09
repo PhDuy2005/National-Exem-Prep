@@ -100,13 +100,17 @@
             // 
             this.dgv_questionSelection.AllowUserToAddRows = false;
             this.dgv_questionSelection.AllowUserToDeleteRows = false;
+            this.dgv_questionSelection.AllowUserToResizeColumns = false;
+            this.dgv_questionSelection.AllowUserToResizeRows = false;
             this.dgv_questionSelection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_questionSelection.Location = new System.Drawing.Point(18, 86);
             this.dgv_questionSelection.Name = "dgv_questionSelection";
+            this.dgv_questionSelection.ReadOnly = true;
             this.dgv_questionSelection.RowHeadersWidth = 51;
             this.dgv_questionSelection.RowTemplate.Height = 24;
             this.dgv_questionSelection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_questionSelection.Size = new System.Drawing.Size(770, 352);
+            this.dgv_questionSelection.StandardTab = true;
             this.dgv_questionSelection.TabIndex = 8;
             this.dgv_questionSelection.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QuestionDoubleClicked);
             // 
