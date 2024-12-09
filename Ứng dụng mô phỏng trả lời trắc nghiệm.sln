@@ -1,20 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35521.163 d17.12
+VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ứng dụng mô phỏng trả lời trắc nghiệm", "Ứng dụng mô phỏng trả lời trắc nghiệm\Ứng dụng mô phỏng trả lời trắc nghiệm.csproj", "{8FBF9BD5-D95D-488B-9A50-A705BACD2864}"
+EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "National Exam Prep", "National Exam Prep\National Exam Prep.aiproj", "{E6C5720D-20B7-4EEE-8410-353EF1D4A464}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		DefaultBuild|Any CPU = DefaultBuild|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8FBF9BD5-D95D-488B-9A50-A705BACD2864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FBF9BD5-D95D-488B-9A50-A705BACD2864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBF9BD5-D95D-488B-9A50-A705BACD2864}.DefaultBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FBF9BD5-D95D-488B-9A50-A705BACD2864}.DefaultBuild|Any CPU.Build.0 = Debug|Any CPU
 		{8FBF9BD5-D95D-488B-9A50-A705BACD2864}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FBF9BD5-D95D-488B-9A50-A705BACD2864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C5720D-20B7-4EEE-8410-353EF1D4A464}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{E6C5720D-20B7-4EEE-8410-353EF1D4A464}.Debug|Any CPU.Build.0 = DefaultBuild
+		{E6C5720D-20B7-4EEE-8410-353EF1D4A464}.DefaultBuild|Any CPU.ActiveCfg = DefaultBuild
+		{E6C5720D-20B7-4EEE-8410-353EF1D4A464}.DefaultBuild|Any CPU.Build.0 = DefaultBuild
+		{E6C5720D-20B7-4EEE-8410-353EF1D4A464}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{E6C5720D-20B7-4EEE-8410-353EF1D4A464}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
