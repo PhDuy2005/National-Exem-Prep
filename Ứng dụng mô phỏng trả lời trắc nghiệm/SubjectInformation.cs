@@ -209,7 +209,10 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                             ReadForeignLanguageExamData(workSheet);
                         else
                             ReadDatasType1(workSheet, limitQuestion, part3Score);
-                        eInfo = new ExamInformation(subject, Time, numberOfQuestion, "Đề chuẩn THPTQG");
+                        if (questionType != 4)
+                            eInfo = new ExamInformation(subject, Time, numberOfQuestion, "Đề chuẩn THPTQG");
+                        else
+                            eInfo = new ExamInformation("Tin học", Time, numberOfQuestion, "Đề chuẩn THPTQG") as cExamInformation_IT;
                         break;
                     case 2:
                         numberOfQuestion = workSheet.Cells[90, 2].GetValue<int>();
@@ -311,6 +314,8 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 
         private void StartClick(object sender, EventArgs e)
         {
+            if (eInfo is cExamInformation_IT) ;
+
             QuestionSelection f = new QuestionSelection(bs, eInfo);
             f.Show();
             this.Hide();
