@@ -314,7 +314,13 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 
         private void StartClick(object sender, EventArgs e)
         {
-            if (eInfo is cExamInformation_IT) ;
+            if (eInfo is cExamInformation_IT)
+            {
+                ITTrackSelection it_f = new ITTrackSelection(bs, eInfo);
+                it_f.Show();
+                this.Hide();
+                return;
+            }
 
             QuestionSelection f = new QuestionSelection(bs, eInfo);
             f.Show();

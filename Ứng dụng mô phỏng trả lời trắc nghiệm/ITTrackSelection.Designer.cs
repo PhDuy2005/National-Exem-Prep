@@ -53,6 +53,7 @@
             this.btn_ITApplication.TabIndex = 8;
             this.btn_ITApplication.Text = "Tin học ứng dụng";
             this.btn_ITApplication.UseVisualStyleBackColor = false;
+            this.btn_ITApplication.Click += new System.EventHandler(this.btn_ITApplication_Click);
             // 
             // btn_ComputerScience
             // 
@@ -65,6 +66,7 @@
             this.btn_ComputerScience.TabIndex = 7;
             this.btn_ComputerScience.Text = "Khoa học máy tính";
             this.btn_ComputerScience.UseVisualStyleBackColor = false;
+            this.btn_ComputerScience.Click += new System.EventHandler(this.btn_ComputerScience_Click);
             // 
             // ITTrackSelection
             // 
