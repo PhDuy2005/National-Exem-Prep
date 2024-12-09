@@ -16,7 +16,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         protected string QuestionContent { get; set; }
         protected string StudentAnswer { get; set; } = "";
         public string AnswerState { get; set; } = "";
-        public string Note { get; protected set; }
+        public string Note { get; set; }
         protected string correctAnswer;
         protected float maxScore;
         public virtual float getScore() => 0;
