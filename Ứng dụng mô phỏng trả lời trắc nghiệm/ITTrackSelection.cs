@@ -26,6 +26,20 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         {
             eInfo.track = InformaticsTrack.ComputerScience;
             MessageBox.Show("Với định hướng Khoa học Máy tính, ở phần II, thí sinh vui lòng trả lời câu 1-2-3-4");
+            foreach (var item in bindingSrc)
+            {
+                cQuestion q = item as cQuestion;
+                if (q is cShortAnswerQuestion)
+                {
+                    cShortAnswerQuestion saq = q as cShortAnswerQuestion;
+                    if (saq.QuestionID == 5 || saq.QuestionID == 6)
+                    {
+                        saq.Note = "Không thuộc phần thi này";
+                        bindingSrc.ResetBindings(false);
+                        //How can I update data in bindingSrc?
+                    }
+                }
+            }
             QuestionSelection f = new QuestionSelection(bindingSrc, eInfo);
             f.Show();
             this.Hide();
@@ -35,6 +49,19 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         {
             eInfo.track = InformaticsTrack.ITApplications;
             MessageBox.Show("Với định hướng Tin học Ứng dụng, ở phần II, thí sinh vui lòng trả lời câu 1-2-5-6");
+            foreach (var item in bindingSrc)
+            {
+                cQuestion q = item as cQuestion;
+                if (q is cShortAnswerQuestion)
+                {
+                    cShortAnswerQuestion saq = q as cShortAnswerQuestion;
+                    if (saq.QuestionID == 4 || saq.QuestionID == 3)
+                    {
+                        saq.Note = "Không thuộc phần thi này";
+                        bindingSrc.ResetBindings(false);
+                    }
+                }
+            }
             QuestionSelection f = new QuestionSelection(bindingSrc, eInfo);
             f.Show();
             this.Hide();

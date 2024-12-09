@@ -210,6 +210,13 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 
             float temp;
 
+            InformaticsTrack track = new InformaticsTrack();
+
+            if (eInfo is cExamInformation_IT itInfo)
+            {
+                track = itInfo.track;
+            }
+
             foreach (cQuestion question in this.bindingSrc)
             {
                 temp = question.getScore();
@@ -220,6 +227,26 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                 }
                 else if (question is cMultiplyTrueFalseQuestion)
                 {
+                    if (eInfo is cExamInformation_IT eITInfo)
+                    {
+                        if (eITInfo.track == InformaticsTrack.ComputerScience)
+                        {
+                            if (question.QuestionID == 1 || question.QuestionID == 2 || question.QuestionID == 3 || question.QuestionID == 4)
+                            {
+                                scoreP2 += temp;
+                                maxScoreP2 += question.GetMaxScore();
+                            }
+                        }
+                        else if (eITInfo.track == InformaticsTrack.ITApplications)
+                        {
+                            if (question.QuestionID == 1 || question.QuestionID == 2 || question.QuestionID == 5 || question.QuestionID == 6)
+                            {
+                                scoreP2 += temp;
+                                maxScoreP2 += question.GetMaxScore();
+                            }
+                        }
+                        continue;
+                    }
                     scoreP2 += temp;
                     maxScoreP2 += question.GetMaxScore();
                 }

@@ -58,7 +58,6 @@
             // btn_ComputerScience
             // 
             this.btn_ComputerScience.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_ComputerScience.Enabled = false;
             this.btn_ComputerScience.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btn_ComputerScience.Location = new System.Drawing.Point(441, 215);
             this.btn_ComputerScience.Name = "btn_ComputerScience";

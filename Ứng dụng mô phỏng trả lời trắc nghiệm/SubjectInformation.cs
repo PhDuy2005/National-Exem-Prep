@@ -212,7 +212,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                         if (questionType != 4)
                             eInfo = new ExamInformation(subject, Time, numberOfQuestion, "Đề chuẩn THPTQG");
                         else
-                            eInfo = new ExamInformation("Tin học", Time, numberOfQuestion, "Đề chuẩn THPTQG") as cExamInformation_IT;
+                            eInfo = new cExamInformation_IT("Tin học", Time, numberOfQuestion, "Đề chuẩn THPTQG");
                         break;
                     case 2:
                         numberOfQuestion = workSheet.Cells[90, 2].GetValue<int>();

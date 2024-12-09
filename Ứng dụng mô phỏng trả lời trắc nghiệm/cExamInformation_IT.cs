@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 {
-    enum InformaticsTrack
+    public enum InformaticsTrack
     {
         ComputerScience = 1, // Khoa học Máy tính
         ITApplications = 2   // Tin học Ứng dụng
@@ -19,5 +19,6 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         {
 
         }
+        public override InformaticsTrack getITTrack() => track;
     }
 }

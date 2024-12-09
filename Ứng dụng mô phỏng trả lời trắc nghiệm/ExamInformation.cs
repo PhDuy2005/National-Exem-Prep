@@ -19,5 +19,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             NumberOfQuestions = numberOfQuestions;
             ExamType = examType;
         }
+
+        public virtual InformaticsTrack getITTrack() => InformaticsTrack.ITApplications;
     }
 }
