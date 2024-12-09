@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
 {
@@ -13,7 +14,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         {
             //char selection;
             int count = 0;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < StudentAnswer.Length; i++)
             {
                 if (StudentAnswer[i] == correctAnswer[i])
                 {
@@ -42,7 +43,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             this.QuestionContent = questionContent;
             this.Note = note;
             this.correctAnswer = correctAnswer;
-            this.scrore = score;
+            this.maxScore = score;
             this.Options = options;
         }
     }

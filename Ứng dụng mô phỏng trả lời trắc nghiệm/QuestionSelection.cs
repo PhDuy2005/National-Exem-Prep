@@ -106,5 +106,12 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
                 MessageBox.Show("Hết giờ làm bài!");
             }
         }
+
+        private void btn_submit_Click(object sender, EventArgs e)
+        {
+            fFinish finish = new fFinish(bindingSource, eInfo);
+            finish.Show();
+            this.Close();
+        }
     }
 }

@@ -155,7 +155,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             try
             {
                 //mở file excel
-                var package = new ExcelPackage(fileInfo);
+                var package = new ExcelPackage(new System.IO.FileInfo("Đề Mẫu Toán.xlsx"));
                 //lấy sheet đầu tiên
                 ExcelWorksheet workSheet = package.Workbook.Worksheets["Sheet1"];
 

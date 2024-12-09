@@ -75,6 +75,7 @@
             this.btn_submit.TabIndex = 7;
             this.btn_submit.Text = "Nộp bài";
             this.btn_submit.UseVisualStyleBackColor = false;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // tableLayoutPanel1
             // 
