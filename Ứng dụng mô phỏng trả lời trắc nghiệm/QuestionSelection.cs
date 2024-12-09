@@ -104,14 +104,20 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             {
                 timerCountdown.Stop();
                 MessageBox.Show("Hết giờ làm bài!");
+                ShowSumarizeForm();
             }
         }
 
-        private void btn_submit_Click(object sender, EventArgs e)
+        void ShowSumarizeForm()
         {
             fFinish finish = new fFinish(bindingSource, eInfo);
             finish.Show();
             this.Close();
+        }
+
+        private void btn_submit_Click(object sender, EventArgs e)
+        {
+            ShowSumarizeForm();
         }
     }
 }
