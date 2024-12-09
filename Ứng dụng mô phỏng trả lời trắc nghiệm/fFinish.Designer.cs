@@ -33,6 +33,7 @@
             this.lb_part2 = new System.Windows.Forms.Label();
             this.lb_part1 = new System.Windows.Forms.Label();
             this.lb_title = new System.Windows.Forms.Label();
+            this.btn_exportFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lb_finalScore
@@ -85,11 +86,24 @@
             this.lb_title.Text = "KẾT QUẢ KIỂM TRA";
             this.lb_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_exportFile
+            // 
+            this.btn_exportFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_exportFile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_exportFile.Location = new System.Drawing.Point(317, 379);
+            this.btn_exportFile.Name = "btn_exportFile";
+            this.btn_exportFile.Size = new System.Drawing.Size(172, 52);
+            this.btn_exportFile.TabIndex = 13;
+            this.btn_exportFile.Text = "Xuất báo cáo";
+            this.btn_exportFile.UseVisualStyleBackColor = false;
+            this.btn_exportFile.Click += new System.EventHandler(this.btn_exportFile_Click);
+            // 
             // fFinish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_exportFile);
             this.Controls.Add(this.lb_finalScore);
             this.Controls.Add(this.lb_part3);
             this.Controls.Add(this.lb_part2);
@@ -107,5 +121,6 @@
         private System.Windows.Forms.Label lb_part2;
         private System.Windows.Forms.Label lb_part1;
         private System.Windows.Forms.Label lb_title;
+        private System.Windows.Forms.Button btn_exportFile;
     }
 }

@@ -13,7 +13,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         {
             if (StudentAnswer == correctAnswer)
             {
-                return scrore;
+                return maxScore;
             }
             return 0;
         }
@@ -24,7 +24,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             this.QuestionContent = questionContent;
             this.Note = note;
             this.correctAnswer = correctAnswer;
-            this.scrore = score;
+            this.maxScore = score;
             this.Options = options;
         }
     }
