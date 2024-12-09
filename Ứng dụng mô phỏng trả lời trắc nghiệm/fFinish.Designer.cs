@@ -111,6 +111,7 @@
             this.Controls.Add(this.lb_title);
             this.Name = "fFinish";
             this.Text = "NationalExamPrep - Tổng kết";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fFinish_FormClosing);
             this.ResumeLayout(false);
 
         }

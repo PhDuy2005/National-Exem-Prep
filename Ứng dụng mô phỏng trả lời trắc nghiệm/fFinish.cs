@@ -18,6 +18,16 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         ExamInformation eInfo;
         float scoreP1, scoreP2, scoreP3;
         float maxScoreP1, maxScoreP2, maxScoreP3;
+
+        private void fFinish_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Kiểm tra nếu đây không phải form chính
+            if (this != Application.OpenForms[0])
+            {
+                Application.Exit(); // Kết thúc toàn bộ ứng dụng
+            }
+        }
+
         public fFinish(BindingSource bindingSource, ExamInformation eInfo)
         {
             InitializeComponent();

@@ -119,5 +119,14 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         {
             ShowSumarizeForm();
         }
+
+        private void QuestionSelection_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Kiểm tra nếu đây không phải form chính
+            if (this != Application.OpenForms[0])
+            {
+                Application.Exit(); // Kết thúc toàn bộ ứng dụng
+            }
+        }
     }
 }

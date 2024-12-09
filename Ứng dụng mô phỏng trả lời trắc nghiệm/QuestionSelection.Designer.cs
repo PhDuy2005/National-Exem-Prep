@@ -124,6 +124,7 @@
             this.Controls.Add(this.btn_submit);
             this.Name = "QuestionSelection";
             this.Text = "NationalExamPrep - Làm bài";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuestionSelection_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_questionSelection)).EndInit();
