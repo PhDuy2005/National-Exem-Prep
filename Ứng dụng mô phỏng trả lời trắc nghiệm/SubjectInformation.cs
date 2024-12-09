@@ -16,7 +16,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
     public partial class SubjectInformation : Form
     {
         List<cQuestion> questions = new List<cQuestion>();
-        BindingSource bs = new BindingSource();
+        BindingSource bs;
         ExamInformation eInfo;
         FileInfo fileInfo;
         Dictionary<string, int> columnIndex = new Dictionary<string, int>()
@@ -155,7 +155,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             try
             {
                 //mở file excel
-                var package = new ExcelPackage(new System.IO.FileInfo("Đề Mẫu Toán.xlsx"));
+                var package = new ExcelPackage(fileInfo);
                 //lấy sheet đầu tiên
                 ExcelWorksheet workSheet = package.Workbook.Worksheets["Sheet1"];
 
@@ -230,6 +230,8 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             {
                 MessageBox.Show("Không thể mở file Excel");
             }
+
+            bs = new BindingSource();
             bs.DataSource = questions;
         }
 
