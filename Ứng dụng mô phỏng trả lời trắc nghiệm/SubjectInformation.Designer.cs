@@ -35,6 +35,7 @@
             this.btn_start = new System.Windows.Forms.Button();
             this.lb_examType = new System.Windows.Forms.Label();
             this.btn_loadQuestion = new System.Windows.Forms.Button();
+            this.lb_projectInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lb_title
@@ -80,6 +81,7 @@
             // btn_start
             // 
             this.btn_start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_start.Enabled = false;
             this.btn_start.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btn_start.Location = new System.Drawing.Point(495, 359);
             this.btn_start.Name = "btn_start";
@@ -109,12 +111,24 @@
             this.btn_loadQuestion.TabIndex = 6;
             this.btn_loadQuestion.Text = "Nạp đề";
             this.btn_loadQuestion.UseVisualStyleBackColor = false;
+            this.btn_loadQuestion.Click += new System.EventHandler(this.btn_loadQuestion_Click);
+            // 
+            // lb_projectInfo
+            // 
+            this.lb_projectInfo.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.lb_projectInfo.Location = new System.Drawing.Point(-1, 414);
+            this.lb_projectInfo.Name = "lb_projectInfo";
+            this.lb_projectInfo.Size = new System.Drawing.Size(806, 109);
+            this.lb_projectInfo.TabIndex = 7;
+            this.lb_projectInfo.Text = "Thông tin đồ án";
+            this.lb_projectInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SubjectInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 450);
+            this.ClientSize = new System.Drawing.Size(804, 532);
+            this.Controls.Add(this.lb_projectInfo);
             this.Controls.Add(this.btn_loadQuestion);
             this.Controls.Add(this.lb_examType);
             this.Controls.Add(this.btn_start);
@@ -123,7 +137,7 @@
             this.Controls.Add(this.lb_subject);
             this.Controls.Add(this.lb_title);
             this.Name = "SubjectInformation";
-            this.Text = "SubjectInformation";
+            this.Text = "NationalExamPrep";
             this.ResumeLayout(false);
 
         }
@@ -137,5 +151,6 @@
         private System.Windows.Forms.Button btn_start;
         private System.Windows.Forms.Label lb_examType;
         private System.Windows.Forms.Button btn_loadQuestion;
+        private System.Windows.Forms.Label lb_projectInfo;
     }
 }

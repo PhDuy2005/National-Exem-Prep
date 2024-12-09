@@ -96,7 +96,7 @@
             this.Controls.Add(this.lb_part1);
             this.Controls.Add(this.lb_title);
             this.Name = "fFinish";
-            this.Text = "fFinish";
+            this.Text = "NationalExamPrep - Tổng kết";
             this.ResumeLayout(false);
 
         }

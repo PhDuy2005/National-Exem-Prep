@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         List<cQuestion> questions = new List<cQuestion>();
         BindingSource bs = new BindingSource();
         ExamInformation eInfo;
+        FileInfo fileInfo;
         Dictionary<string, int> columnIndex = new Dictionary<string, int>()
             {
                 {"ID", 2 },
@@ -143,7 +145,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             }
         }
 
-        private void loadQuestion()
+        private void loadQuestion(FileInfo fileInfo)
         {
             //Cài bản quyền
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -153,7 +155,7 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             try
             {
                 //mở file excel
-                var package = new ExcelPackage(new System.IO.FileInfo("Đề Mẫu DS Toán.xlsx"));
+                var package = new ExcelPackage(fileInfo);
                 //lấy sheet đầu tiên
                 ExcelWorksheet workSheet = package.Workbook.Worksheets["Sheet1"];
 
@@ -292,8 +294,9 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
         public SubjectInformation()
         {
             InitializeComponent();
-            loadQuestion();
-            ShowInformation();
+            //loadQuestion();
+            //ShowInformation();
+            lb_projectInfo.Text = "Đồ án kết thúc học phần Thực hành:\r\nLập trình trực quan (IT008)\r\nPhạm Trần Khánh Duy - 23520384\r\nIT008.P11.1";
         }
 
         void ShowInformation()
@@ -309,6 +312,29 @@ namespace Ứng_dụng_mô_phỏng_trả_lời_trắc_nghiệm
             QuestionSelection f = new QuestionSelection(bs, eInfo);
             f.Show();
             this.Hide();
+        }
+
+        private void btn_loadQuestion_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Excel Files|*.xlsx;*.xls",
+                Title = "Chọn file Excel để load"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                // Tiến hành load dữ liệu từ file
+                loadQuestion(new FileInfo(filePath));
+                ShowInformation();
+                btn_start.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Tải file thất bại");
+            }
         }
     }
 }

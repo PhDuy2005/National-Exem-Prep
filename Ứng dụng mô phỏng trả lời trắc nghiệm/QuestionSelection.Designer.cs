@@ -118,7 +118,7 @@
             this.Controls.Add(this.dgv_questionSelection);
             this.Controls.Add(this.btn_submit);
             this.Name = "QuestionSelection";
-            this.Text = "QuestionSelection";
+            this.Text = "NationalExamPrep - Làm bài";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_questionSelection)).EndInit();
